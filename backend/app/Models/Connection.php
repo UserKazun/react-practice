@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use PDO;
 
 trait Connection
@@ -10,10 +11,6 @@ trait Connection
 
     public function connection()
     {
-        $this->pdo = new PDO(
-            'mysql:host=localhost;dbname=laravel_local;charset=utf8',
-            'phper',
-            'secret'
-        );
+        $this->pdo = DB::connection()->getPdo();
     }
 }
