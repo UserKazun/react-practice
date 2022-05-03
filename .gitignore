@@ -1,5 +1,8 @@
 # PhpStorm
 .idea
 
+#VSCode
+.DS_Store
+
 # Docker Compose
 .env
