@@ -4,19 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Task
 {
     use Connection;
 
-    public function __construct(array $attributes = [])
+    public function __construct()
     {
-        parent::__construct($attributes);
-
         $this->connection();
     }
 
     public function getTasks(): array
     {
-        return $this->pdo->query(`SELECT * FROM tasks`)->fetchAll();
+        return $this->pdo->query('SELECT * FROM tasks')->fetchAll();
     }
 }
