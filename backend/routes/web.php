@@ -9,6 +9,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Route::get('/task/list', [App\Http\Controllers\TaskController::class, 'list'])->name('task.list');
+Route::get('{all}', function () {
+    return view('index');
+})->where(['all' => '.*']);
