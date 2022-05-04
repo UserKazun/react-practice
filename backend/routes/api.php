@@ -7,4 +7,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/task/list', 'TaskController@list')->name('api.v1.list');
+Route::get('task/list', 'TaskController@list');

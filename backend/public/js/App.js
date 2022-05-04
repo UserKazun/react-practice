@@ -2980,7 +2980,7 @@ var App = function App() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default().get('task/list');
+              return axios__WEBPACK_IMPORTED_MODULE_4___default().get('api/task/list');
 
             case 2:
               data = _context.sent;

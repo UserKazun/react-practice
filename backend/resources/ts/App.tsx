@@ -5,7 +5,7 @@ import axios from "axios";
 
 const App: React.FC = () => {
     const getTasks = async () => {
-        const data = await axios.get('task/list')
+        const data = await axios.get('api/task/list')
         console.log(data)
     }
 
