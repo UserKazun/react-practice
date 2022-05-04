@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import TaskList from "../pages/TaskList";
 
 const Router = () => {
     return (
@@ -16,6 +17,9 @@ const Router = () => {
               <li>
                 <Link to="/users">Users</Link>
               </li>
+              <li>
+                  <Link to="/task/list">TaskList</Link>
+              </li>
             </ul>
           </nav>
   
@@ -30,6 +34,9 @@ const Router = () => {
             </Route>
             <Route path="/">
               <Home />
+            </Route>
+            <Route path="/task/list">
+                <TaskList />
             </Route>
           </Switch>
         </div>
