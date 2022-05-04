@@ -1,15 +1,52 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import TaskList from '../pages/TaskList'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-export const Router = () => {
+const Router = () => {
     return (
-        <BrowserRouter>
-        <Routes>
-            <Route path='/task/list'>
-                <TaskList />
+      <BrowserRouter>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/users">Users</Link>
+              </li>
+            </ul>
+          </nav>
+  
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/about">
+              <About />
             </Route>
-        </Routes>
-        </BrowserRouter>
+            <Route path="/users">
+              <Users />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
-};
+}
+
+export default Router
+
+function Home() {
+    return <h2>Home</h2>;
+  }
+  
+  function About() {
+    return <h2>About</h2>;
+  }
+  
+  function Users() {
+    return <h2>Users</h2>;
+  }
