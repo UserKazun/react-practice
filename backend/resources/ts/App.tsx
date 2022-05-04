@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
-import { RecoilRoot } from "recoil";
 import Router from "./router/Router";
-
-import Example from "./components/Example"
+import axios from "axios";
 
 const App: React.FC = () => {
+    const getTasks = async () => {
+        const data = await axios.get('task/list')
+        console.log(data)
+    }
+
+    useEffect(() => {
+        getTasks()
+    })
+
     return (
     <div>
         <Router />
