@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\TaskService;
-use Illuminate\Contracts\View\View;
-use \Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 class TaskController
@@ -13,6 +11,6 @@ class TaskController
     {
         $result = $service->execute();
 
-        //return view('task.list', $result);
+        return response()->json($result, Response::HTTP_OK);
     }
 }
