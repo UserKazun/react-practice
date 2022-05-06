@@ -31,6 +31,7 @@
         "typescript": "^4.6.3"
     },
     "dependencies": {
+        "react-query": "^3.38.1",
         "recoil": "^0.7.2",
         "styled-components": "^5.3.5"
     }
