@@ -18,7 +18,7 @@ const Router = () => {
                 <Link to="/users">Users</Link>
               </li>
               <li>
-                  <Link to="/task/list">TaskList</Link>
+                <Link to="/task/list">TaskList</Link>
               </li>
             </ul>
           </nav>
@@ -36,7 +36,7 @@ const Router = () => {
               <Home />
             </Route>
             <Route path="/task/list">
-                <TaskList />
+              <TaskList />
             </Route>
           </Switch>
         </div>

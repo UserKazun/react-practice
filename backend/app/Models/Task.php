@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use PDO;
 
 class Task
 {
@@ -13,8 +14,8 @@ class Task
         $this->connection();
     }
 
-    public function getTasks(): array
+    public function getTasks()
     {
-        return $this->pdo->query('SELECT * FROM tasks')->fetchAll();
+        return $this->pdo->query('SELECT * FROM tasks')->fetchAll(PDO::FETCH_ASSOC);
     }
 }
