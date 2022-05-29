@@ -1,23 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
-import Example from "../components/Example";
-import {useQuery} from "react-query";
-import axios from "axios";
-
-type Task = {
-    id: number,
-    task_name: string,
-    task_description: string,
-    created_at: Date,
-    updated_at: Date
-}
+import { useTasks } from "../queries/TaskQuery";
 
 function TaskList() {
-    const { data:tasks, status } = useQuery('tasks', async () => {
-        const { data } = await axios.get<Task[]>('api/task/list')
-
-        return data
-    })
+    const { data:tasks, status } = useTasks()
 
     console.log(tasks)
 
