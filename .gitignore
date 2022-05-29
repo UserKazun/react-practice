@@ -6,3 +6,5 @@
 
 # Docker Compose
 .env
+
+.vscode
